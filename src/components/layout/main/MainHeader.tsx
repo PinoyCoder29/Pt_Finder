@@ -27,7 +27,7 @@ export default function MainHeader() {
                 <li className="nav-item"><a href="" className="nav-link">Contact</a></li>
               </ul>
               <ul className="navbar-nav ms-auto">
-                <li className="nav-item"><a href="" className="nav-link">Get Started</a></li> 
+                <li className="nav-item"><a href="" className="btn text-light" style={{backgroundColor:'#c90ca9ff'}}>Get Started</a></li> 
                 <li className="nav-item"><a href="" className="nav-link">Sign In</a></li>
               </ul>
          

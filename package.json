@@ -1,0 +1,36 @@
+{
+  "name": "pt_finder",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.16.2",
+    "@upstash/redis": "^1.35.4",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "bootstrap": "^5.3.8",
+    "crypt": "^0.0.2",
+    "crypto": "^1.0.1",
+    "next": "15.5.3",
+    "nodemailer": "^7.0.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "redis": "^5.8.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/nodemailer": "^7.0.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.3",
+    "prisma": "^6.16.2",
+    "typescript": "^5"
+  }
+}

@@ -149,9 +149,9 @@ export default function Home() {
                 <div
                   className="position-relative shadow-lg"
                   style={{
-                    width: "100%",
+                    width: "90%",
                     maxWidth: "500px",
-                    height: "clamp(300px, 60vh, 600px)",
+                    height: "clamp(300px, 53vh, 600px)",
                     background: "linear-gradient(135deg, #cebca7ff 0%, #c90ca9ff 100%)",
                     borderRadius: "clamp(20px, 5vw, 40px)",
                     overflow: "hidden",

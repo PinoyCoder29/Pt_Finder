@@ -143,15 +143,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column with Image */}
-            <div className="col-lg-6 col-md-12 order-1 order-lg-2 mb-4 mb-lg-0">
+            {/* Right Column with Image - FIXED */}
+            <div className="col-lg-6 col-md-12 order-1 order-lg-2  mb-lg-0">
               <div className="d-flex justify-content-center align-items-center px-2 px-sm-3">
                 <div
                   className="position-relative shadow-lg"
                   style={{
                     width: "90%",
                     maxWidth: "500px",
-                    height: "clamp(300px, 53vh, 600px)",
+                    height: "clamp(400px,40vh, 650px)", // Increased height
                     background: "linear-gradient(135deg, #cebca7ff 0%, #c90ca9ff 100%)",
                     borderRadius: "clamp(20px, 5vw, 40px)",
                     overflow: "hidden",
@@ -162,18 +162,18 @@ export default function Home() {
                     alt="Students finding part-time jobs in Quezon Province"
                     fill
                     style={{ 
-                      objectFit: "cover",
-                      objectPosition: "center"
+                      objectFit: "contain", // Changed from "cover" to "contain"
+                      objectPosition: "center top" // Position image at top center to align with "Empower"
                     }}
                     priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+                    sizes="(max-width: 508px) 90vw, (max-width: 1200px) 50vw, 400px"
                   />
                   
-                  {/* Overlay for better contrast */}
+                  {/* Overlay for better contrast - adjusted opacity */}
                   <div 
                     className="position-absolute w-100 h-100"
                     style={{
-                      background: "linear-gradient(45deg, rgba(201,12,169,0.1) 0%, transparent 50%)",
+                      background: "linear-gradient(45deg, rgba(201,12,169,0.05) 0%, transparent 50%)", // Reduced opacity
                       top: 0,
                       left: 0
                     }}
@@ -186,7 +186,8 @@ export default function Home() {
                       bottom: "20px",
                       left: "20px",
                       maxWidth: "200px",
-                      fontSize: "0.85rem"
+                      fontSize: "0.85rem",
+                      zIndex: 10 // Added z-index to ensure it's above the image
                     }}
                   >
                     <div className="d-flex align-items-center">

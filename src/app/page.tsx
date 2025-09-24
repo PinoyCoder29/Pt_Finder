@@ -10,7 +10,7 @@ export default function Home() {
         <div className="container">
           <div className="row">
             {/* Left Column */}
-            <div className="col-md-7">
+            <div className="col-md-6 px-5">
               <p>FOR STUDENTS IN QUEZON</p>
               <h2 style={{ fontSize: "60px" }}>
                 <strong style={{ color: "#c90ca9ff", fontSize: "65px" }}>
@@ -39,12 +39,12 @@ export default function Home() {
                 </button>
                 <a className="btn btn-dark" href="/Employer-login">
                   Post a Job
-                </a>
+                </a>     
               </div>
             </div>
 
             {/* Right Column with Image */}
-            <div className="col-md-5 d-flex justify-content-center align-items-center mt-4 mt-md-0">
+            <div className="col-md-6 d-flex justify-content-center align-items-center mt-4 mt-md-0">
               <div
                 style={{
                   width: "100%",

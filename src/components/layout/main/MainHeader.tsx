@@ -21,12 +21,12 @@ export default function MainHeader() {
             <div className="offcanvas-body">
              
             
-              <ul className="navbar-nav mx-auto">
+              <ul className="navbar-nav mx-auto d-flex text-center mb-2">
                 <li className="nav-item"><a href="" className="nav-link">Home</a></li>
                 <li className="nav-item"><a href="" className="nav-link">About</a></li>
                 <li className="nav-item"><a href="" className="nav-link">Contact</a></li>
               </ul>
-              <ul className="navbar-nav ms-auto">
+              <ul className="navbar-nav ms-auto text-center">
                 <li className="nav-item"><a href="" className="btn text-light" style={{backgroundColor:'#c90ca9ff'}}>Get Started</a></li> 
                 <li className="nav-item"><a href="" className="nav-link">Sign In</a></li>
               </ul>

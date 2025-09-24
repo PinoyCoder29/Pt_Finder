@@ -7,27 +7,27 @@ export default function MainHeader() {
         <div className="container">
           <h1 className="navbar-brand">Pt_Finder</h1>
 
-          {/* Toggle button for offcanvas */}
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasWithBothOptions"
-            aria-controls="offcanvasWithBothOptions"
+            data-bs-target="#offcanvasScrolling"
+            aria-controls="offcanvasScrolling"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Offcanvas menu (with both scrolling & backdrop) */}
           <div
-            className="offcanvas offcanvas-start" style={{width:'50%'}}
+            className="offcanvas offcanvas-start"
+            style={{ width: "50%" }}
             data-bs-scroll="true"
+            data-bs-backdrop="false"
             tabIndex={-1}
-            id="offcanvasWithBothOptions"
-            aria-labelledby="offcanvasWithBothOptionsLabel"
+            id="offcanvasScrolling"
+            aria-labelledby="offcanvasScrollingLabel"
           >
             <div className="offcanvas-header">
-              <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+              <h5 className="offcanvas-title" id="offcanvasScrollingLabel">
                 Menu
               </h5>
               <button
@@ -37,40 +37,36 @@ export default function MainHeader() {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="offcanvas-body d-flex flex-column text-center">
-              {/* Left links */}
-              <ul className="navbar-nav mb-3">
+            <div className="offcanvas-body">
+              <ul className="navbar-nav mx-auto d-flex text-center mb-2">
                 <li className="nav-item">
-                  <Link href="/" className="nav-link" data-bs-dismiss="offcanvas">
+                  <Link href="/" className="nav-link">
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/about" className="nav-link" data-bs-dismiss="offcanvas">
+                  <Link href="/about" className="nav-link">
                     About
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/contact" className="nav-link" data-bs-dismiss="offcanvas">
+                  <Link href="/contact" className="nav-link">
                     Contact
                   </Link>
                 </li>
               </ul>
-
-              {/* Right links */}
-              <ul className="navbar-nav">
-                <li className="nav-item mb-2">
+              <ul className="navbar-nav ms-auto text-center">
+                <li className="nav-item">
                   <Link
-                    href="/auth/signUp"
-                    className="btn text-light w-100"
+                    href="auth/signUp"
+                    className="btn text-light"
                     style={{ backgroundColor: "#c90ca9ff" }}
-                    data-bs-dismiss="offcanvas"
                   >
                     Get Started
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/signIn" className="nav-link" data-bs-dismiss="offcanvas">
+                  <Link href="/signIn" className="nav-link">
                     Sign In
                   </Link>
                 </li>

@@ -10,7 +10,7 @@ export default function Home() {
         <div className="container">
           <div className="row">
             {/* Left Column */}
-            <div className="col-md-6 px-5">
+            <div className="col-md-6">
               <p>FOR STUDENTS IN QUEZON</p>
               <h2 style={{ fontSize: "60px" }}>
                 <strong style={{ color: "#c90ca9ff", fontSize: "65px" }}>

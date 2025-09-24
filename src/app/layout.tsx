@@ -9,8 +9,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
       <body>
         <MainHeader />
         <main>{children}</main>
-
-        {/* Bootstrap JS via CDN */}
+        
         <Script 
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
           strategy="beforeInteractive" 

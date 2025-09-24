@@ -1,0 +1,10 @@
+
+{
+  "extends": "next/core-web-vitals",
+  "ignorePatterns": [
+    "src/generated/prisma/**",
+    "**/*.wasm.js",
+    "**/wasm-compiler-edge.js",
+    "**/wasm-engine-edge.js"
+  ]
+}

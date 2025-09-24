@@ -60,10 +60,15 @@ export default function VerifyEmail() {
               {/* Right side (Form) */}
               <div className="col-md-6 col-12 p-4">
                 <form onSubmit={handleSubmit}>
+                  {/* First & Last Name */}
                   <div className="row mb-2">
                     <div className="col-md-6 col-12 mb-2 mb-md-0">
+                      <label htmlFor="firstName" className="form-label small text-muted">
+                        First Name
+                      </label>
                       <input
                         type="text"
+                        id="firstName"
                         name="firstName"
                         placeholder="First Name"
                         value={formData.firstName}
@@ -72,8 +77,12 @@ export default function VerifyEmail() {
                       />
                     </div>
                     <div className="col-md-6 col-12">
+                      <label htmlFor="lastName" className="form-label small text-muted">
+                        Last Name
+                      </label>
                       <input
                         type="text"
+                        id="lastName"
                         name="lastName"
                         placeholder="Last Name"
                         value={formData.lastName}
@@ -83,20 +92,29 @@ export default function VerifyEmail() {
                     </div>
                   </div>
 
+                  {/* Birthdate */}
                   <div className="mb-2">
+                    <label htmlFor="birthdate" className="form-label small text-muted">
+                      Birthdate
+                    </label>
                     <input
                       type="date"
+                      id="birthdate"
                       name="birthdate"
                       value={formData.birthdate}
                       onChange={handleChange}
                       className="fb-input"
                       style={{ padding: "0.5rem" }}
-                      placeholder="mm/dd/yy"
                     />
                   </div>
 
+                  {/* Gender */}
                   <div className="mb-2">
+                    <label htmlFor="gender" className="form-label small text-muted">
+                      Gender
+                    </label>
                     <select
+                      id="gender"
                       name="gender"
                       value={formData.gender}
                       onChange={handleChange}
@@ -111,9 +129,14 @@ export default function VerifyEmail() {
                     </select>
                   </div>
 
+                  {/* Email */}
                   <div className="mb-2">
+                    <label htmlFor="email" className="form-label small text-muted">
+                      Email
+                    </label>
                     <input
                       type="email"
+                      id="email"
                       name="email"
                       placeholder="example@gmail.com"
                       value={formData.email}
@@ -122,9 +145,14 @@ export default function VerifyEmail() {
                     />
                   </div>
 
+                  {/* Password */}
                   <div className="mb-3">
+                    <label htmlFor="password" className="form-label small text-muted">
+                      Password
+                    </label>
                     <input
                       type="password"
+                      id="password"
                       name="password"
                       placeholder="Password"
                       value={formData.password}
@@ -133,12 +161,14 @@ export default function VerifyEmail() {
                     />
                   </div>
 
+                  {/* Submit Button */}
                   <div className="d-flex justify-content-center mb-2">
                     <button type="submit" className="btn btn-primary px-5">
                       Submit
                     </button>
                   </div>
 
+                  {/* Sign In Link */}
                   <div className="d-flex justify-content-center">
                     <Link href="/Employer-login" className="nav-link text-center">
                       You have an account?

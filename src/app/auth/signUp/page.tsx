@@ -31,7 +31,6 @@ export default function VerifyEmail() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form Data:", formData);
-    // dito mo ilalagay yung API call mo para mag send ng email verification
   };
 
   return (
@@ -66,20 +65,20 @@ export default function VerifyEmail() {
                       <input
                         type="text"
                         name="firstName"
-                        className="form-control shadow"
                         placeholder="First Name"
                         value={formData.firstName}
                         onChange={handleChange}
+                        className="fb-input"
                       />
                     </div>
                     <div className="col-md-6 col-12">
                       <input
                         type="text"
                         name="lastName"
-                        className="form-control shadow"
                         placeholder="Last Name"
                         value={formData.lastName}
                         onChange={handleChange}
+                        className="fb-input"
                       />
                     </div>
                   </div>
@@ -88,9 +87,9 @@ export default function VerifyEmail() {
                     <input
                       type="date"
                       name="birthdate"
-                      className="form-control shadow"
                       value={formData.birthdate}
                       onChange={handleChange}
+                      className="fb-input"
                       style={{ padding: "0.5rem" }}
                     />
                   </div>
@@ -98,9 +97,9 @@ export default function VerifyEmail() {
                   <div className="mb-2">
                     <select
                       name="gender"
-                      className="form-control shadow"
                       value={formData.gender}
                       onChange={handleChange}
+                      className="fb-input"
                     >
                       <option value="" disabled>
                         Select Gender
@@ -116,9 +115,9 @@ export default function VerifyEmail() {
                       type="email"
                       name="email"
                       placeholder="example@gmail.com"
-                      className="form-control shadow"
                       value={formData.email}
                       onChange={handleChange}
+                      className="fb-input"
                     />
                   </div>
 
@@ -126,10 +125,10 @@ export default function VerifyEmail() {
                     <input
                       type="password"
                       name="password"
-                      className="form-control shadow"
                       placeholder="Password"
                       value={formData.password}
                       onChange={handleChange}
+                      className="fb-input"
                     />
                   </div>
 
@@ -151,6 +150,25 @@ export default function VerifyEmail() {
           </div>
         </div>
       </div>
+
+      {/* Custom CSS */}
+      <style jsx>{`
+        .fb-input {
+          width: 100%;
+          padding: 0.55rem 0.75rem;
+          border-radius: 6px;
+          border: 1px solid #ccd0d5;
+          background-color: #f0f2f5;
+          transition: all 0.2s;
+        }
+
+        .fb-input:focus {
+          outline: none;
+          border-color: #1877f2;
+          box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+          background-color: #fff;
+        }
+      `}</style>
     </div>
   );
 }

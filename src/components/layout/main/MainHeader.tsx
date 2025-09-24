@@ -40,17 +40,29 @@ export default function MainHeader() {
             <div className="offcanvas-body">
               <ul className="navbar-nav mx-auto d-flex text-center mb-2">
                 <li className="nav-item">
-                  <Link href="/" className="nav-link">
+                  <Link
+                    href="/"
+                    className="nav-link"
+                    data-bs-dismiss="offcanvas"
+                  >
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/about" className="nav-link">
+                  <Link
+                    href="/about"
+                    className="nav-link"
+                    data-bs-dismiss="offcanvas"
+                  >
                     About
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/contact" className="nav-link">
+                  <Link
+                    href="/contact"
+                    className="nav-link"
+                    data-bs-dismiss="offcanvas"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -61,12 +73,17 @@ export default function MainHeader() {
                     href="auth/signUp"
                     className="btn text-light"
                     style={{ backgroundColor: "#c90ca9ff" }}
+                    data-bs-dismiss="offcanvas"
                   >
                     Get Started
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/signIn" className="nav-link">
+                  <Link
+                    href="/signIn"
+                    className="nav-link"
+                    data-bs-dismiss="offcanvas"
+                  >
                     Sign In
                   </Link>
                 </li>

@@ -91,6 +91,7 @@ export default function VerifyEmail() {
                       onChange={handleChange}
                       className="fb-input"
                       style={{ padding: "0.5rem" }}
+                      placeholder="mm/dd/yy"
                     />
                   </div>
 

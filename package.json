@@ -12,12 +12,14 @@
   "dependencies": {
     "@prisma/client": "^6.16.2",
     "@upstash/redis": "^1.35.4",
+    "axios": "^1.12.2",
     "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.8",
     "next": "15.5.3",
     "nodemailer": "^7.0.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-toastify": "^11.0.5",
     "redis": "^5.8.2"
   },
   "devDependencies": {

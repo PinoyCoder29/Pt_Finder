@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 interface FormData {
   firstName: string;
   lastName: string;
-  birthdate: string;
+  birthDate: string;
   gender: string;
   email: string;
   password: string;
@@ -16,7 +18,7 @@ export default function VerifyEmail() {
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
-    birthdate: "",
+    birthDate: "",
     gender: "",
     email: "",
     password: "",
@@ -28,9 +30,18 @@ export default function VerifyEmail() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
+    try {
+      const response = await axios.post("/api/user/auth/verifyEmail",formData);
+      if(response.status === 201){
+        toast.success(response.data.message)
+      }
+    } catch (error: any) {
+      if(error.response.status === 400){
+        toast.error(error.response.data.message)
+      }
+    }
   };
 
   return (
@@ -94,14 +105,14 @@ export default function VerifyEmail() {
 
                   {/* Birthdate */}
                   <div className="mb-2">
-                    <label htmlFor="birthdate" className="form-label small text-muted">
+                    <label htmlFor="birthDate" className="form-label small text-muted">
                       Birthdate
                     </label>
                     <input
                       type="date"
-                      id="birthdate"
-                      name="birthdate"
-                      value={formData.birthdate}
+                      id="birthDate"
+                      name="birthDate"
+                      value={formData.birthDate}
                       onChange={handleChange}
                       className="fb-input"
                       style={{ padding: "0.5rem" }}
@@ -180,6 +191,7 @@ export default function VerifyEmail() {
             </div>
           </div>
         </div>
+        <ToastContainer/>
       </div>
 
       {/* Custom CSS */}
@@ -200,6 +212,6 @@ export default function VerifyEmail() {
           background-color: #fff;
         }
       `}</style>
-    </div>
+    </div>  
   );
 }

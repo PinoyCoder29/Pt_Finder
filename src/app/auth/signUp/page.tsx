@@ -191,7 +191,7 @@ export default function VerifyEmail() {
             </div>
           </div>
         </div>
-        <ToastContainer/>
+        <ToastContainer theme="dark"/>
       </div>
 
       {/* Custom CSS */}

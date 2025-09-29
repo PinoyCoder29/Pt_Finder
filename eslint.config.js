@@ -1,11 +1,15 @@
-// eslint.config.js
 import js from "@eslint/js";
-import tseslint from "typescript-eslint";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 
 export default [
   js.configs.recommended,
-  ...tseslint.configs.recommended,
   {
-    ignores: ["src/generated/**"], // ✅ dito mo i-ignore ang Prisma generated files
+    parser: tsParser,
+    plugins: { "@typescript-eslint": tsPlugin },
+    extends: ["plugin:@typescript-eslint/recommended"],
+  },
+  {
+    ignores: ["src/generated/**"], // Prisma generated files
   },
 ];

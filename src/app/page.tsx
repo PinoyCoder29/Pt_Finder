@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="min-vh-100">
       {/* Hero Section */}
-      <section className="p-2">
+      <section className="">
         <div className="container">
           <div className="row align-items-center min-vh-100">
             {/* Left Column */}

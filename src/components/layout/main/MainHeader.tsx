@@ -46,19 +46,24 @@ export default function MainHeader() {
                 </li>
                 <li className="nav-item">
                   <Link href="/about" className="nav-link">
-                    About
+                    Employer Access
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link href="/about" className="nav-link">
+                    About Us
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link href="/contact" className="nav-link">
-                    Contact
+                    Contact Us
                   </Link>
                 </li>
               </ul>
               <ul className="navbar-nav ms-auto text-center">
                 <li className="nav-item">
                   <Link
-                    href="auth/signUp"
+                    href="/user/auth/signUp"
                     className="btn text-light"
                     style={{ backgroundColor: "#c90ca9ff" }}
                   >

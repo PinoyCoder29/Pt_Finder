@@ -12,6 +12,6 @@ export type TempUser = {
 
 export const redisServices = {
   async saveTempUser(email: string, data: TempUser) {
-    await redis.set(`temp_user:${email}`, JSON.stringify(data), { ex: 300 }); // 5 min
+    await redis.set(`tempUser:${email}`, JSON.stringify(data), { ex: 300 }); // 5 min
   }
 }

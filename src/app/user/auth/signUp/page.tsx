@@ -45,10 +45,10 @@ export default function VerifyEmail() {
   };
 
   return (
-    <div className="p-3 p-md-5">
+    <div className="p-1 p-md-4 shadow">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-lg-8 col-12">
+          <div className="col-lg-8 col-10">
             <div className="row rounded shadow overflow-hidden">
               {/* Left side */}
               <div

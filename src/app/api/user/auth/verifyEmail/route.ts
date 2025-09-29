@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
              <p>This code expires in 5 minutes.</p>`,
     });
 
-    return NextResponse.json({ success: true, message: "OTP sent to your email" }, { status: 201 });
+    return NextResponse.json({ success: true, message: "OTP sent to your email",otp:otp }, { status: 201 });
   } catch (error: unknown) {
     let message = "Something went wrong";
     if (error instanceof Error) message = error.message;

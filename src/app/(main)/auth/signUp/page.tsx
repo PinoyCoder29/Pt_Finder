@@ -39,7 +39,7 @@
         if(response.status === 201){
           toast.success(response.data.message)
         }
-      router.push(`/user/auth/verifyOtp?email=${formData.email}`)
+      router.push(`/auth/verifyOtp?email=${formData.email}`)
       } catch (error: any) {
         if(error.response.status === 400){
           toast.error(error.response.data.message)

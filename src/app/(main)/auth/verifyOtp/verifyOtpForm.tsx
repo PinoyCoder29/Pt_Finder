@@ -2,7 +2,7 @@
 
 import axios from "axios"
 import { useSearchParams } from "next/navigation"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import React, { useState } from "react"
 import { toast, ToastContainer } from "react-toastify"
 

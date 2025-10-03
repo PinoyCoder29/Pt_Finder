@@ -15,6 +15,7 @@
     "axios": "^1.12.2",
     "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
     "jsonwebtoken": "^9.0.2",
     "next": "15.5.3",
     "nodemailer": "^7.0.6",

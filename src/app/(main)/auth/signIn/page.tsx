@@ -1,9 +1,11 @@
 "use client"
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 export default function SignIn() {
+   const router = useRouter()
     const [formData,setFormData] = useState({
         email:"",
         password:"",
@@ -19,6 +21,7 @@ export default function SignIn() {
             if(response.status === 200){
                 toast.success(response.data.message)
             }
+            router.push("/user/home")
         } catch (error:any) {
             if(error.response.status === 400){
                 toast.error(error.response.data.message)

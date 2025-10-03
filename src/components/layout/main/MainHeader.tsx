@@ -40,7 +40,7 @@ export default function MainHeader() {
             <div className="offcanvas-body">
               <ul className="navbar-nav mx-auto d-flex text-center mb-2">
                 <li className="nav-item">
-                  <Link href="/" className="nav-link">
+                  <Link href="/main/" className="nav-link">
                     Home
                   </Link>
                 </li>
@@ -63,7 +63,7 @@ export default function MainHeader() {
               <ul className="navbar-nav ms-auto text-center">
                 <li className="nav-item">
                   <Link
-                    href="/user/auth/signUp"
+                    href="/auth/signUp"
                     className="btn text-light"
                     style={{ backgroundColor: "#c90ca9ff" }}
                   >
@@ -71,7 +71,7 @@ export default function MainHeader() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/user/auth/signIn" className="nav-link">
+                  <Link href="/auth/signIn" className="nav-link">
                     Sign In
                   </Link>
                 </li>

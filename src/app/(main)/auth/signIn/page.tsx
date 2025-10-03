@@ -4,30 +4,43 @@ import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
+// ✅ Interface for form data
+interface SignInFormData {
+  email: string;
+  password: string;
+}
+
 export default function SignIn() {
-   const router = useRouter()
-    const [formData,setFormData] = useState({
-        email:"",
-        password:"",
-    })
-    const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>{
-        setFormData({...formData, [e.target.name]: e.target.value})
+  const router = useRouter();
+
+  // ✅ useState with interface
+  const [formData, setFormData] = useState<SignInFormData>({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSignInSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("/api/user/auth/signIn", formData);
+
+      if (response.status === 200) {
+        toast.success(response.data.message);
+        router.push("/user/home");
+      }
+    } catch (error: any) {
+      if (error.response?.status === 400) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
     }
-   
-    const handleSignInSubmit = async (e:FormEvent)=>{
-        e.preventDefault()
-        try {
-            const response = await axios.post("/api/user/auth/signIn",formData)
-            if(response.status === 200){
-                toast.success(response.data.message)
-            }
-            router.push("/user/home")
-        } catch (error:any) {
-            if(error.response.status === 400){
-                toast.error(error.response.data.message)
-            }
-        }
-    }
+  };
+
   return (
     <section className="p-5">
       <div className="container">
@@ -36,7 +49,10 @@ export default function SignIn() {
             <div className="row shadow rounded overflow-hidden">
               
               {/* Left side - Description */}
-              <div className="col-md-6 d-flex flex-column justify-content-center align-items-center text-center p-4 text-white" style={{background: "linear-gradient(to right, #5e3154ff, #da28bcff) "}}>
+              <div
+                className="col-md-6 d-flex flex-column justify-content-center align-items-center text-center p-4 text-white"
+                style={{ background: "linear-gradient(to right, #5e3154ff, #da28bcff)" }}
+              >
                 <h2 className="fw-bold mb-3">Welcome Back!</h2>
                 <p style={{ maxWidth: "280px", fontSize: "0.9rem" }}>
                   Sign in to access your account and continue exploring new
@@ -59,6 +75,7 @@ export default function SignIn() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
+                      required
                     />
                   </div>
 
@@ -72,6 +89,7 @@ export default function SignIn() {
                       name="password"
                       value={formData.password}
                       onChange={handleChange}
+                      required
                     />
                   </div>
 
@@ -91,7 +109,7 @@ export default function SignIn() {
             </div>
           </div>
         </div>
-        <ToastContainer theme="dark"/>
+        <ToastContainer theme="dark" />
       </div>
     </section>
   );

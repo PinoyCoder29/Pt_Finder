@@ -58,7 +58,7 @@
                   className="col-md-6 col-12 p-4 d-flex flex-column justify-content-center align-items-center text-center text-white"
                   style={{
                     background: "linear-gradient(to right, #5e3154ff, #da28bcff)",
-                    minHeight: "300px",
+                    minHeight: "280px",
                   }}
                 >
                   <div className="mb-3">

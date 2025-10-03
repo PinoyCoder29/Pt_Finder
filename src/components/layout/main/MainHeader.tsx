@@ -71,7 +71,7 @@ export default function MainHeader() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/signIn" className="nav-link">
+                  <Link href="/user/auth/signIn" className="nav-link">
                     Sign In
                   </Link>
                 </li>

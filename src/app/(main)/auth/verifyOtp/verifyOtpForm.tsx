@@ -2,6 +2,7 @@
 
 import axios from "axios"
 import { useSearchParams } from "next/navigation"
+import { useRouter } from "next/router"
 import React, { useState } from "react"
 import { toast, ToastContainer } from "react-toastify"
 
@@ -11,6 +12,7 @@ interface VerifyOtpForm {
 }
 
 export default function VerifyOtpForm() {
+  const router = useRouter()
   const searchParams = useSearchParams()
   const emailFormQuery = searchParams.get("email") || ""
 
@@ -34,6 +36,7 @@ export default function VerifyOtpForm() {
       if (response.status === 201) {
         toast.success(response.data.message)
       }
+      router.push('/auth/signIn')
     } catch (error: any) {
       if (error.response?.status === 400) {
         toast.error(error.response.data.message)

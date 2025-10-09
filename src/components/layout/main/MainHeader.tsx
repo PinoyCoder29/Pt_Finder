@@ -63,7 +63,7 @@ export default function MainHeader() {
               <ul className="navbar-nav ms-auto text-center">
                 <li className="nav-item">
                   <Link
-                    href="/auth/signUp"
+                    href="/main/auth/signUp"
                     className="btn text-light"
                     style={{ backgroundColor: "#c90ca9ff" }}
                   >
@@ -71,7 +71,7 @@ export default function MainHeader() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/auth/signIn" className="nav-link">
+                  <Link href="/main/auth/signIn" className="nav-link">
                     Sign In
                   </Link>
                 </li>

@@ -109,7 +109,7 @@ export default function SignIn() {
             </div>
           </div>
         </div>
-        <ToastContainer theme="dark" />
+        <ToastContainer theme="dark" position="top-center"/>
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -11,7 +12,7 @@
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../../public/assets/font/Poppins-Regular.ttf");
+  src: url("../../public/assets/font/Poppins-Medium.ttf");
 }
 html,
 body {
@@ -44,4 +45,8 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.hook-text{
+  font-family: "Poppins";
 }

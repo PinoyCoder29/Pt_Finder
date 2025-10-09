@@ -19,7 +19,7 @@ model User {
   lastName String 
   birthDate DateTime
   gender String
-  email String
+  email String  
   password String
   createdAt DateTime @default(now())
 }

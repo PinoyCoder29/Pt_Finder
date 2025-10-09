@@ -33,7 +33,7 @@ export default function Home() {
                     Empower
                   </strong>
                   <span 
-                    className="text-dark fw-bold"
+                    className="text-dark fw-bold hook-text"
                     style={{ 
                       fontSize: "clamp(1.8rem, 6vw, 3rem)",
                       lineHeight: "1.2"

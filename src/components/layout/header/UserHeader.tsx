@@ -14,7 +14,7 @@ export default function UserHeader() {
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link href="/user/home" className={`nav-link ${pathname === "/user/home" ? "active" : ""}`}>Home</Link>
+                <Link href="/user/home" className={`nav-link ${pathname === "/user/home" ? "active" : ""}`}>Job search</Link>
               </li>
               <li className="nav-item">
                 <Link href="/my-jobs" className={`nav-link ${pathname === "/my-jobs" ? "active" : ""}`}>My Jobs</Link>
@@ -35,7 +35,7 @@ export default function UserHeader() {
         <div className="container d-flex justify-content-around">
           <Link href="/user/home" className={`text-center nav-link d-block ${pathname === "/user/home" ? "text-success" : "text-muted"}`}>
             <i className="bi bi-house-door-fill fs-4"></i>
-            <div style={{ fontSize: "12px" }}>Home</div>
+            <div style={{ fontSize: "12px" }}>Job search</div>
           </Link>
           <Link href="/my-jobs" className={`text-center nav-link d-block ${pathname === "/my-jobs" ? "text-success" : "text-muted"}`}>
             <i className="bi bi-briefcase-fill fs-4"></i>

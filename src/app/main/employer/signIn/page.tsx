@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import Link from "next/link"
 
 // ✅ Interface for form data
 interface SignInFormData {
@@ -10,7 +11,7 @@ interface SignInFormData {
   password: string;
 }
 
-export default function SignIn() {
+export default function VerifyEmail() {
   const router = useRouter();
 
   // ✅ useState with interface
@@ -63,7 +64,7 @@ export default function SignIn() {
 
               {/* Right side - Sign In Form */}
               <div className="col-md-6 bg-white p-4">
-                <h2 className="fw-bold mb-4 text-center">Sign In</h2>
+                <h2 className="fw-bold mb-4 text-center">Employer Sign In</h2>
                 <form onSubmit={handleSignInSubmit}>
                   {/* Email */}
                   <div className="mb-3">
@@ -102,9 +103,11 @@ export default function SignIn() {
                     >
                       Submit
                     </button>
+                      </div>
 
-                  
-                  </div>
+                   <div className="text-center">
+                    <Link href="" className="nav-link">You don't have an account?<span className="text-primary">Sign Up</span></Link>
+                    </div>   
                 </form>
               </div>
 

@@ -5,7 +5,7 @@ export default function Layout({children}: {children:ReactNode}){
     return(
         <div>
             <EmployerHeader/>
-            <main>{children}</main>
+            <main>{children}</main> 
         </div>
     )
 }

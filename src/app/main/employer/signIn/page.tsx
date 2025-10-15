@@ -36,7 +36,7 @@ export default function VerifyEmail() {
     } catch (error: any) {
       if (error.response?.status === 400) {
         toast.error(error.response.data.message);
-      } else {
+      } else { 
         toast.error("Something went wrong. Please try again.");
       }
     }
@@ -52,14 +52,14 @@ export default function VerifyEmail() {
               {/* Left side - Description */}
               <div
                 className="col-md-6 d-flex flex-column justify-content-center align-items-center text-center p-4 text-white"
-                style={{ background: "linear-gradient(to right, #5e3154ff, #da28bcff)" }}
+                style={{ background: "linear-gradient(to right, #5e3154ff, #144ba3ff)" }}
               >
                 <h2 className="fw-bold mb-3">Welcome Back!</h2>
                 <p style={{ maxWidth: "280px", fontSize: "0.9rem" }}>
                   Sign in to access your account and continue exploring new
                   opportunities. Manage your profile, connect with others, and
                   stay updated with the latest features we offer.
-                </p>
+                </p> 
               </div>
 
               {/* Right side - Sign In Form */}
@@ -106,7 +106,7 @@ export default function VerifyEmail() {
                       </div>
 
                    <div className="text-center">
-                    <Link href="" className="nav-link">You don't have an account?<span className="text-primary">Sign Up</span></Link>
+                    <Link href="/main/employer/verifyEmail" className="nav-link">You don't have an account?<span className="text-primary">Sign Up</span></Link>
                     </div>   
                 </form>
               </div>

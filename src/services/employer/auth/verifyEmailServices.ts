@@ -1,11 +1,23 @@
 import {prisma} from "@/lib/config/prisma"
+import {redis} from "@/lib/config/redis"
 export async function emailExists(email:string) {
-    const user = await prisma.user.findFirst({
-        where: {email},
-    })
-    if(!user){
-        return({sucess:false,message:"USER_NOT_FOUND"})
-    }
+   const employer = await prisma.employer.findFirst({
+      where: {email},
+   })
+   return employer;
+}
+// for TemporaryStorage
+export type tempUser = {
+   firstName: string;
+   lastName: string;
+   position: string;
+   email: string;
+   contact: string;
+   password: string;
 }
 
-
+export const rediServices = {
+    async saveTempUser(email:string, data:tempUser){
+      await redis.set(`EmployerTempUser ${email}`,JSON.stringify(data),{ex:300});  
+    }
+}

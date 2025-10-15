@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 export default function UserHeader() {
   const pathname = usePathname();
-
+   
   return (
     <div>
       {/* Desktop Navbar */}

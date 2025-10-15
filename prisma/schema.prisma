@@ -23,3 +23,13 @@ model User {
   password String
   createdAt DateTime @default(now())
 }
+
+model Employer {
+  id Int @id @default(autoincrement())
+  firstName String
+  lastName String
+  position String
+  email String
+  contact String
+  password String
+}

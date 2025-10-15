@@ -3,7 +3,7 @@
   import { useState } from "react";
   import Link from "next/link";
   import axios from "axios";
-  import { toast, ToastContainer } from "react-toastify";
+  import { toast } from "react-toastify";
   import { useRouter } from "next/navigation";
 
   interface FormData {
@@ -39,7 +39,7 @@
         if(response.status === 201){
           toast.success(response.data.message)
         }
-      router.push(`/auth/verifyOtp?email=${formData.email}`)
+      router.push(`/main/auth/verifyOtp?email=${formData.email}`)
       } catch (error: any) {
         if(error.response.status === 400){
           toast.error(error.response.data.message)
@@ -194,7 +194,6 @@
               </div>
             </div>
           </div>
-          <ToastContainer theme="dark" position="top-center"/>
         </div>
 
         {/* Custom CSS */}

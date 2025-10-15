@@ -3,15 +3,15 @@
   import { useState } from "react";
   import Link from "next/link";
   import axios from "axios";
-  import { toast, ToastContainer } from "react-toastify";
+  import { toast} from "react-toastify";
   import { useRouter } from "next/navigation";
 
   interface FormData {
     firstName: string;
     lastName: string;
-    birthDate: string;
-    gender: string;
+    position: string,
     email: string;
+    contact: string;
     password: string;
   }
 
@@ -20,9 +20,9 @@
     const [formData, setFormData] = useState<FormData>({
       firstName: "",
       lastName: "",
-      birthDate: "",
-      gender: "",
+      position: "",
       email: "",
+      contact: "",
       password: "",
     });
 
@@ -35,11 +35,11 @@
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
       try {
-        const response = await axios.post("/api/user/auth/verifyEmail",formData);
+        const response = await axios.post("/api/employer/auth/verifyEmail",formData);
         if(response.status === 201){
           toast.success(response.data.message)
         }
-      router.push(`/auth/verifyOtp?email=${formData.email}`)
+      router.push(`/main/employerAccess/verifyOtp?email=${formData.email}`)
       } catch (error: any) {
         if(error.response.status === 400){
           toast.error(error.response.data.message)
@@ -49,6 +49,7 @@
 
     return (
       <div className="p-1 p-md-4 shadow">
+        
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8 col-10">
@@ -106,44 +107,23 @@
                         />
                       </div>
                     </div>
-
-                    {/* Birthdate */}
+                     
+                     {/* Position */}
                     <div className="mb-2">
-                      <label htmlFor="birthDate" className="form-label small text-muted">
-                        Birthdate
+                      <label htmlFor="position" className="form-label small text-muted">
+                        Position
                       </label>
                       <input
-                        type="date"
-                        id="birthDate"
-                        name="birthDate"
-                        value={formData.birthDate}
+                        type="position"
+                        id="position"
+                        name="position"
+                        placeholder="e.g. HR Manager/Owner/Recruiter"
+                        value={formData.position}
                         onChange={handleChange}
                         className="fb-input"
-                        style={{ padding: "0.5rem" }}
                       />
                     </div>
-
-                    {/* Gender */}
-                    <div className="mb-2">
-                      <label htmlFor="gender" className="form-label small text-muted">
-                        Gender
-                      </label>
-                      <select
-                        id="gender"
-                        name="gender"
-                        value={formData.gender}
-                        onChange={handleChange}
-                        className="fb-input"
-                      >
-                        <option value="" disabled>
-                          Select Gender
-                        </option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="others">Others</option>
-                      </select>
-                    </div>
-
+                  
                     {/* Email */}
                     <div className="mb-2">
                       <label htmlFor="email" className="form-label small text-muted">
@@ -155,6 +135,22 @@
                         name="email"
                         placeholder="example@gmail.com"
                         value={formData.email}
+                        onChange={handleChange}
+                        className="fb-input"
+                      />
+                    </div>
+                      
+                      {/* Contact */}
+                     <div className="mb-2">
+                      <label htmlFor="contact" className="form-label small text-muted">
+                        Contact
+                      </label>
+                      <input
+                        type="contact"
+                        id="contact"
+                        name="contact"
+                        placeholder="ex:09xxxxxxxxx"
+                        value={formData.contact}
                         onChange={handleChange}
                         className="fb-input"
                       />
@@ -195,7 +191,6 @@
               </div>
             </div>
           </div>
-          <ToastContainer theme="dark" position="top-center"/>
         </div>
 
         {/* Custom CSS */}

@@ -18,6 +18,6 @@ export type tempUser = {
 
 export const rediServices = {
     async saveTempUser(email:string, data:tempUser){
-      await redis.set(`EmployerTempUser ${email}`,JSON.stringify(data),{ex:300});  
+      await redis.set(`EmployerTempUser:${email.trim().toLocaleLowerCase()}`,JSON.stringify(data),{ex:300});  
     }
 }

@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 import Link from "next/link"
 
 // ✅ Interface for form data
@@ -106,7 +106,7 @@ export default function VerifyEmail() {
                       </div>
 
                    <div className="text-center">
-                    <Link href="/main/employer/verifyEmail" className="nav-link">You don't have an account?<span className="text-primary">Sign Up</span></Link>
+                    <Link href="/main/employerAccess/verifyEmail" className="nav-link">You don't have an account?<span className="text-primary">Sign Up</span></Link>
                     </div>   
                 </form>
               </div>
@@ -114,7 +114,6 @@ export default function VerifyEmail() {
             </div>
           </div>
         </div>
-        <ToastContainer theme="dark" position="top-center"/>
       </div>
     </section>
   );

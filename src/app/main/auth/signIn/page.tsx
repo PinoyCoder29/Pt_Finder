@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast,} from "react-toastify";
 
 // ✅ Interface for form data
 interface SignInFormData {
@@ -111,7 +111,6 @@ export default function SignIn() {
             </div>
           </div>
         </div>
-        <ToastContainer theme="dark" position="top-center"/>
       </div>
     </section>
   );

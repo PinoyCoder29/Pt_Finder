@@ -39,7 +39,9 @@
         if(response.status === 201){
           toast.success(response.data.message)
         }
-      router.push(`/main/employerAccess/verifyOtp?email=${formData.email}`)
+        setTimeout(() => {
+      router.push(`/main/employerAccess/verifyOtp?email=${formData.email}`) 
+        }, 1500);
       } catch (error: any) {
         if(error.response.status === 400){
           toast.error(error.response.data.message)
@@ -49,7 +51,6 @@
 
     return (
       <div className="p-1 p-md-4 shadow">
-        
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8 col-10">
@@ -181,7 +182,7 @@
 
                     {/* Sign In Link */}
                     <div className="d-flex justify-content-center">
-                      <Link href="/Employer-login" className="nav-link text-center">
+                      <Link href="/main/employerAccess/signIn" className="nav-link text-center">
                         You have an account?
                         <span className="text-primary"> Sign In</span>
                       </Link>
@@ -190,6 +191,7 @@
                 </div>
               </div>
             </div>
+           
           </div>
         </div>
 

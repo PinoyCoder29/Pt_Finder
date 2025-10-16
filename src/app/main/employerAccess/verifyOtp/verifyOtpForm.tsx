@@ -31,12 +31,12 @@ export default function VerifyOtpForm() {
   const handleVerifyOtpSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const response = await axios.post("/api/user/auth/verifyOtp", formData)
+      const response = await axios.post("/api/employer/auth/verifyOtp", formData)
 
       if (response.status === 201) {
         toast.success(response.data.message)
       }
-      router.push('/auth/signIn')
+      router.push('/main/employerAccess/signIn')
     } catch (error: any) {
       if (error.response?.status === 400) {
         toast.error(error.response.data.message)

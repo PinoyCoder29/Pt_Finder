@@ -27,12 +27,12 @@ export default function VerifyEmail() {
   const handleSignInSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/user/auth/signIn", formData);
+      const response = await axios.post("/api/employer/auth/signIn", formData);
 
-      if (response.status === 200) {
+      if (response.status === 201) {
         toast.success(response.data.message);
-        router.push("/user/home");
       }
+        router.push("/employer/");
     } catch (error: any) {
       if (error.response?.status === 400) {
         toast.error(error.response.data.message);

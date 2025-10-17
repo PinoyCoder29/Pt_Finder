@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import background from "@/image/background.png";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -53,7 +54,7 @@ export default function Home() {
 
                 {/* Buttons - Responsive Stack */}
                 <div className="d-flex flex-column flex-sm-row gap-3 mb-4">
-                  <button
+                  <Link href="/main/auth/signUp"
                     className="btn text-white px-4 py-3 fw-semibold rounded-3 shadow-sm flex-fill flex-sm-grow-0"
                     style={{ 
                       backgroundColor: "#c90ca9ff",
@@ -74,11 +75,11 @@ export default function Home() {
                   >
                     <i className="bi bi-search me-2"></i>
                     Find Your Job
-                  </button>
+                  </Link>
                   
-                  <a 
+                  <Link
                     className="btn btn-outline-dark px-4 py-3 fw-semibold rounded-3 shadow-sm flex-fill flex-sm-grow-0 text-decoration-none"
-                    href="/Employer-login"
+                    href="/main/employerAccess/signIn"
                     style={{
                       fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
                       minWidth: "200px",
@@ -100,7 +101,7 @@ export default function Home() {
                   >
                     <i className="bi bi-plus-circle me-2"></i>
                     Post a Job
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Stats Section - Hidden on very small screens */}

@@ -10,7 +10,8 @@ export default function Layout({children}: {children:ReactNode}){
 
                 </div>
                 <div className="col-md-10">
-            <main>{children}</main> 
+                <main>{children}</main> 
+
                 </div>
             </div>
         </div>

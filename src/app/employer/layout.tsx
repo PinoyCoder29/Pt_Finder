@@ -6,8 +6,7 @@ export default function Layout({children}: {children:ReactNode}){
         <div>
             <div className="row">
                 <div className="col-md-2">
-                <EmployerHeader/>
-
+                 <EmployerHeader/>
                 </div>
                 <div className="col-md-10">
                 <main>{children}</main> 
